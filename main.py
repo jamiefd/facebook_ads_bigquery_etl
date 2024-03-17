@@ -50,7 +50,7 @@ def exist_dataset_table(client, table_id, dataset_id, project_id, schema, cluste
     except NotFound:
         dataset_ref = "{}.{}".format(project_id, dataset_id)
         dataset = bigquery.Dataset(dataset_ref)
-        dataset.location = "US"
+        dataset.location = "europe-west2"
         dataset = client.create_dataset(dataset)  # Make an API request.
         logger.info("Created dataset {}.{}".format(client.project, dataset.dataset_id))
 
